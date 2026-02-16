@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSKP Explorer - KSSM Bahasa Inggeris</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical data - small metadata file loads first -->
+    <link rel="preload" href="/data/metadata.json" as="fetch" type="application/json" crossorigin>
+    
+    <!-- Preload font for faster text rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS inline for faster first paint -->
+    <style>
+      /* Critical rendering path optimizations */
+      html { scroll-behavior: smooth; }
+      body { 
+        margin: 0; 
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root { min-height: 100vh; }
+      
+      /* Prevent FOUC (Flash of Unstyled Content) */
+      .grid-bg { 
+        background-color: #fafafa;
+        background-image: radial-gradient(circle, #e4e4e7 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      
+      /* Loading animation for initial load */
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin {
+        animation: spin 1s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

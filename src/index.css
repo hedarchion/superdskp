@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  /* Custom pastel colors */
+  --color-lime: #c8ff3d;
+  --color-lime-light: #dcfce7;
+  --color-blue-light: #dbeafe;
+  --color-purple-light: #f3e8ff;
+  --color-pink-light: #fce7f3;
+  --color-yellow-light: #fef9c3;
+  --color-orange-light: #ffedd5;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 78 100% 62%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 78 100% 62%;
+  --chart-1: 78 100% 62%;
+  --chart-2: 217 91% 60%;
+  --chart-3: 270 60% 65%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 1rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* Smooth transitions */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bento card styles */
+.bento-card {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Pill button styles */
+.pill-btn {
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Accent lime color */
+.accent-lime {
+  background-color: #c8ff3d;
+}
+
+/* Pastel backgrounds */
+.bg-pastel-lime { background-color: #dcfce7; }
+.bg-pastel-blue { background-color: #dbeafe; }
+.bg-pastel-purple { background-color: #f3e8ff; }
+.bg-pastel-pink { background-color: #fce7f3; }
+.bg-pastel-yellow { background-color: #fef9c3; }
+.bg-pastel-orange { background-color: #ffedd5; }
+.bg-pastel-cyan { background-color: #cffafe; }
+
+/* Saturated pastel bar colors */
+.bg-bar-lime { background-color: #86efac; }
+.bg-bar-blue { background-color: #93c5fd; }
+.bg-bar-purple { background-color: #d8b4fe; }
+.bg-bar-pink { background-color: #f9a8d4; }
+.bg-bar-yellow { background-color: #fde047; }
