@@ -17,7 +17,7 @@ export function useCurriculumMetadata() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('/data/metadata.json')
+    fetch('data/metadata.json')
       .then(res => {
         if (!res.ok) throw new Error('Failed to load metadata')
         return res.json()
@@ -50,7 +50,7 @@ export function useForm(formNumber: number) {
     }
 
     setLoading(true)
-    fetch(`/data/form${formNumber}.json`)
+    fetch(`data/form${formNumber}.json`)
       .then(res => {
         if (!res.ok) throw new Error(`Failed to load form ${formNumber}`)
         return res.json()
@@ -98,7 +98,7 @@ export function useCurriculum() {
     }
 
     // Load metadata first, then all forms in parallel
-    fetch('/data/metadata.json')
+    fetch('data/metadata.json')
       .then(res => res.json())
       .then((metadata: CurriculumMetadata) => {
         // Load all forms in parallel
@@ -107,7 +107,7 @@ export function useCurriculum() {
             if (formCache.has(f.form)) {
               return Promise.resolve(formCache.get(f.form)!)
             }
-            return fetch(`/data/form${f.form}.json`)
+            return fetch(`data/form${f.form}.json`)
               .then(res => res.json())
               .then((data: { form: FormData }) => {
                 formCache.set(f.form, data.form)
